@@ -1,0 +1,8 @@
+  on: [push]
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v1
+        - name: Run e2e Test
+        - run: echo "it Works!"
