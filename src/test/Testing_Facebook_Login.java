@@ -18,9 +18,10 @@ public class Testing_Facebook_Login {
     @BeforeAll
     public static void initWebDriver(){
         System.setProperty("webdriver.chrome.driver", "libs/chromedriver");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");
-        driver = new ChromeDriver(options);
+        //ChromeOptions options = new ChromeOptions();
+        //options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");
+        //driver = new ChromeDriver(options);
+        driver = new ChromeDriver();
     }
     @Test
     @DisplayName("Going To Facebook")
@@ -28,7 +29,7 @@ public class Testing_Facebook_Login {
     public void step_1_go_to_facebook_page() throws InterruptedException {
         driver.get("https://facebook.com");
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//button[2]")).click();
+        driver.findElement(By.xpath("//button[contains(text(), \"Allow All Cookies\")]")).click();
         assertEquals(driver.getTitle(),"Facebook - Log In or Sign Up","The page does not match");
     }
 
