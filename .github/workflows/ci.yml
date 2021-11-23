@@ -5,4 +5,4 @@
       steps:
         - uses: actions/checkout@v1
         - name: Run e2e Test
-        - run: echo "it Works!"
+          run: echo "it Works!"
